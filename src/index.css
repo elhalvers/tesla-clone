@@ -16,8 +16,10 @@ h1 {
   font-weight: 500;
   letter-spacing: -0.6px;
   line-height: 48px;
-  font-family: 'Gotham Medium', -apple-system, system-ui, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 @keyframes animateDown {

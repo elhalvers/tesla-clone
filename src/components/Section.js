@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Reveal from 'react-reveal/Reveal';
 
 function Section({
   title,
@@ -7,23 +8,25 @@ function Section({
   leftBtnText,
   rightBtnText,
   backgroundImg,
+  downArrowImg,
 }) {
   return (
-    <div>
-      <Wrap bgImage={backgroundImg}>
+    <Wrap bgImage={backgroundImg}>
+      <Reveal effect='animate__fadeInUp'>
         <ItemText>
           <h1>{title}</h1>
+
           <p>{description}</p>
         </ItemText>
-        <Buttons>
-          <ButtonGroup>
-            <LeftButton>{leftBtnText}</LeftButton>
-            <RightButton>{rightBtnText}</RightButton>
-          </ButtonGroup>
-          <DownArrow src='images/down-arrow.svg'></DownArrow>
-        </Buttons>
-      </Wrap>
-    </div>
+      </Reveal>
+
+      <ButtonGroup>
+        <LeftButton>{leftBtnText}</LeftButton>
+
+        {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+      </ButtonGroup>
+      <DownArrow src={downArrowImg} />
+    </Wrap>
   );
 }
 
@@ -47,9 +50,10 @@ const ItemText = styled.div`
 
 const ButtonGroup = styled.div`
   display: flex;
-  margin-bottom: 30px;
-  @media (max-width: 768px) {
+  margin-top: 400px;
+  @media (max-width: 600px) {
     flex-direction: column;
+    ${'' /* align-items: stretch; */}
   }
 `;
 
@@ -77,11 +81,10 @@ const RightButton = styled(LeftButton)`
 `;
 
 const DownArrow = styled.img`
+  display: flex;
   height: 40px;
   overflow-x: hidden;
   animation: animateDown infinite 1.5s;
 `;
-
-const Buttons = styled.div``;
 
 export default Section;

@@ -11,6 +11,7 @@ function Home() {
         backgroundImg='images/model-s.jpg'
         leftBtnText='custom order'
         rightBtnText='existing inventory'
+        downArrowImg='images/down-arrow.svg'
       />
       <Section
         title='Model Y'
@@ -49,7 +50,6 @@ function Home() {
       />
       <Section
         title='Accessories'
-        description='Solar Roof Costs Less Than a New Roof Plus Solar Panels'
         backgroundImg='images/accessories.jpg'
         leftBtnText='shop now'
       />
